@@ -1,24 +1,24 @@
 pipeline {
     agent any 
-    stages{
-        stage ('checkout'){
-          steps {
-            git branch: 'main', url: 'https://github.com/mkranthi/kubernetes.git'
-          }
-        }  
-        stage('build image from Dockerfile'){
-            steps{
+    stages {
+        stage ('checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/mkranthi/kubernetes.git'
+            }
+        }
+        stage('build image from Dockerfile') {
+            steps {
                 sh 'docker build -t kube-image .'
             }
         }
-        stage('tag the  image'){
-            steps{
+        stage('tag the image') {
+            steps {
                 sh 'docker tag kube-image:latest kmannedev/kube-image:latest'
             }
         }
-        stage('push image to Dockerhub'){
-            steps{
-                sh 'docker push kmannedev/kube-image'
+        stage('push image to Docker Hub') {
+            steps {
+                sh 'docker push kmannedev/kube-image:latest'
             }
         }
     }
