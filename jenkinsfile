@@ -16,10 +16,5 @@ pipeline {
                 sh 'docker tag kube-image:latest kmannedev/kube-image:latest'
             }
         }
-        stage('push image to Docker Hub') {
-            steps {
-                sh 'docker push kmannedev/kube-image:latest'
-            }
-        }
     }
 }
