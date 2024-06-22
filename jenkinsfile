@@ -8,7 +8,12 @@ pipeline {
         }  
         stage('build image from Dockerfile'){
             steps{
-                sh 'docker build -t kmannedev/kube-image .'
+                sh 'docker build -t kube-image .'
+            }
+        }
+        stage('tag the  image'){
+            steps{
+                sh 'docker tag kube-image:latest kmannedev/kube-image:latest'
             }
         }
         stage('push image to Dockerhub'){
