@@ -16,5 +16,10 @@ pipeline {
                 sh 'docker tag kube-image:latest kmannedev/kube-image:latest'
             }
         }
+        stage('kubectl ') {
+            steps {
+                sh 'kubectl create -f pod3.yaml'
+            }
+        }
     }
 }
