@@ -8,7 +8,7 @@ pipeline {
         }  
         stage('build image from Dockerfile'){
             steps{
-                sh 'docker build -t kube-image .'
+                sh 'docker build -t kmannedev/kube-image .'
             }
         }
         stage('push image to Dockerhub'){
