@@ -13,7 +13,7 @@ pipeline {
         }
         stage('tag the image') {
             steps {
-                sh 'docker tag dockerimageversion1 kmannedev/dockerimageversion1:v1.0'
+                sh 'docker tag practice-imageversion1 kmannedev/practice-imageversion1:v1.0'
             }
         }
         stage('kubectl ') {
