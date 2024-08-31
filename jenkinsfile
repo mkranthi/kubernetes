@@ -3,22 +3,22 @@ pipeline {
     stages {
         stage ('checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/mkranthi/kubernetes.git'
+                git branch: 'develop, url: 'https://github.com/mkranthi/kubernetes.git'
             }
         }
         stage('build image from Dockerfile') {
             steps {
-                sh 'docker build -t kube-image .'
+                sh 'docker build -t practice-imageversion1 .'
             }
         }
         stage('tag the image') {
             steps {
-                sh 'docker tag kube-image:latest kmannedev/kube-image:latest'
+                sh 'docker tag dockerimageversion1 kmannedev/dockerimageversion1:v1.0'
             }
         }
         stage('kubectl ') {
             steps {
-                sh 'kubectl create -f pod3.yaml'
+                sh 'kubectl create -f deployment.yaml'
             }
         }
     }
