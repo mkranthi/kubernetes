@@ -24,7 +24,7 @@ pipeline {
         }
         stage('deployment  ') {
             steps {
-                sh 'kubectl create -f namespcae.yaml'
+                sh 'kubectl create -f namespace.yaml'
                 sh 'kubectl create -f deployment.yaml'
                 sh 'kubectl apply -f service.yaml'
             }
