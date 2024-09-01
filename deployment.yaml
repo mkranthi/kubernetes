@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: kmannedev/dockerimageversion1:v1.0
+        image: kmannedev/practice-imageversion1:v1.0
         ports:
         - containerPort: 80
