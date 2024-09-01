@@ -13,12 +13,16 @@ pipeline {
         }
         stage('tag the image') {
             steps {
-                sh 'docker tag dpractice-imageversion1 kmannedev/practice-imageversion1:v1.0'
+<<<<<<< HEAD:jenkinsfile
+                sh 'docker tag practice-imageversion1 kmannedev/practice-imageversion1:v1.0'
             }
         }
         stage('push the image') {
             steps {
                 sh 'docker push kmannedev/practice-imageversion1:v1.0'
+=======
+                sh 'docker tag practice-imageversion1 kmannedev/practice-imageversion1:v1.0'
+>>>>>>> 543cec57ca5dfa26d8abc0ddf2e4296438cdf4ca:Jenkinsfile
             }
         }
         stage('kubectl ') {
